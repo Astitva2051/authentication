@@ -31,9 +31,6 @@ router.post(
             if (user.password === req.body.password) {
               console.log("Login success");
               console.log(user);
-              if (user.admin == true) {
-                res.send("Login Successful.Welcome admin.");
-              }
               res.send("Login Successful");
             } else {
               res.send("ERROR: Wrong Password");

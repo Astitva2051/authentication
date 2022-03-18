@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
   mobile: {
     type: Number,
     required: true,
-    unique: true,
   },
 
   birthdate: {
@@ -31,7 +30,7 @@ const userSchema = new mongoose.Schema({
   admin: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
 module.exports = mongoose.model("user", userSchema);

@@ -43,6 +43,7 @@ router.post(
                 mobile: req.body.mobile,
                 birthdate: req.body.birthdate,
                 name: req.body.name,
+                admin: true,
               })
               .then(
                 (user) => {

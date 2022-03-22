@@ -31,11 +31,18 @@ router.post(
             if (user.password === req.body.password) {
               console.log("Login success");
               console.log(user);
-              res.send("Login Successful");
+              if(user.admin==true){
+                res.send("Login Successful. Welcome Admin")
+              }
+              else{
+              res.send("Login Successful. Welcome User");
+              }
             } else {
+              res.status(401);
               res.send("ERROR: Wrong Password");
             }
           } else {
+            res.status(401);
             res.send("ERROR: Email is not registered");
           }
         },
